@@ -53,7 +53,7 @@ public class UIManager : MonoBehaviour
         yield return StartCoroutine(fade(1f));
 
         // Load the new scene
-        SceneManager.LoadScene(sceneName);
+        SceneManager.LoadScene("player_anim");
 
         // Fade in
         yield return StartCoroutine(fade(0f));
