@@ -1,4 +1,5 @@
-﻿ using UnityEngine;
+﻿using Unity.VisualScripting;
+using UnityEngine;
 #if ENABLE_INPUT_SYSTEM 
 using UnityEngine.InputSystem;
 #endif
@@ -211,8 +212,10 @@ namespace StarterAssets
                 _cinemachineTargetYaw, 0.0f);
         }
 
+        
         private void Move()
         {
+            StopMoving();
             // set target speed based on move speed, sprint speed and if sprint is pressed
             float targetSpeed = _input.sprint ? SprintSpeed : MoveSpeed;
 
@@ -386,6 +389,26 @@ namespace StarterAssets
             if (animationEvent.animatorClipInfo.weight > 0.5f)
             {
                 AudioSource.PlayClipAtPoint(LandingAudioClip, transform.TransformPoint(_controller.center), FootstepAudioVolume);
+            }
+        }
+
+        private void StopMoving()
+        {
+            if (PlayerController.instance.isStucking == true)
+            {
+                //Debug.Log("Player is sleeping, stopping movement");
+              
+                _input.move = Vector2.zero;
+                _input.sprint = false;
+                _input.jump = false;
+                _speed = 0f;
+                _animationBlend = 0f;
+                // update animator if using character
+                if (_hasAnimator)
+                {
+                    _animator.SetFloat(_animIDSpeed, _animationBlend);
+                    _animator.SetFloat(_animIDMotionSpeed, 0f);
+                }
             }
         }
     }

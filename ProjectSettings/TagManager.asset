@@ -18,6 +18,8 @@ TagManager:
   - Environment_Mountains
   - Environment_Forest
   - Environment_Hills
+  - Bed
+  - Office
   layers:
   - Default
   - TransparentFX
