@@ -209,6 +209,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6d125eb5c3d1a824b9a5e734f96bbc7a, type: 3}
   m_PrefabInstance: {fileID: 6645403}
   m_PrefabAsset: {fileID: 0}
+
 --- !u!1 &135020159 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6166379858557812166, guid: 2845787aed1572d4b8e6b5f8f5619323, type: 3}
@@ -266,6 +267,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: reference
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a7e7d233bc9740e47a0988d83483099e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: -344004081357383697, guid: a7e7d233bc9740e47a0988d83483099e, type: 3}
@@ -857,11 +863,13 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1076285868}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+
 --- !u!95 &1177115351 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 5734221081561775254, guid: 2e96d9bb1dc71054ab788a6b07e01a3e, type: 3}
   m_PrefabInstance: {fileID: 5368741626748483196}
   m_PrefabAsset: {fileID: 0}
+
 --- !u!1001 &1221041499
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -886,6 +894,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: MainCamera
       objectReference: {fileID: 0}
+
+    - target: {fileID: 8944336655422409498, guid: f6d148d888ffbf54b9afe9936dfaec1f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+
     - target: {fileID: 8944336655422409503, guid: f6d148d888ffbf54b9afe9936dfaec1f, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -1036,7 +1050,9 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
+
   m_IsActive: 1
+
 --- !u!95 &1412511652
 Animator:
   serializedVersion: 7
@@ -1369,6 +1385,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
+
   m_IsActive: 1
 --- !u!4 &2054484434
 Transform:
@@ -1392,6 +1409,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3893294197879345259, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
   m_PrefabInstance: {fileID: 1762682258}
   m_PrefabAsset: {fileID: 0}
+
 --- !u!1001 &260488158251524385
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1476,6 +1494,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
+
   m_IsActive: 1
 --- !u!4 &2114283753834967213
 Transform:
@@ -1670,6 +1689,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bed
       objectReference: {fileID: 0}
+    - target: {fileID: 664858013104437347, guid: c010800e7eb92a244b91181af18ff817, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1686,6 +1710,7 @@ PrefabInstance:
     - target: {fileID: 4781663923415445328, guid: 9e1bedbe9e792ba458062b39aee2391f, type: 3}
       propertyPath: book
       value: 
+
       objectReference: {fileID: 135020159}
     - target: {fileID: 4781663923415445328, guid: 9e1bedbe9e792ba458062b39aee2391f, type: 3}
       propertyPath: animator
@@ -1743,6 +1768,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Desk
       objectReference: {fileID: 0}
+
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1901,6 +1927,7 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
+
   m_SourcePrefab: {fileID: 100100000, guid: 2845787aed1572d4b8e6b5f8f5619323, type: 3}
 --- !u!1001 &7488940962461314104
 PrefabInstance:
@@ -1954,6 +1981,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Chair
       objectReference: {fileID: 0}
+    - target: {fileID: 4231246143183635189, guid: b9450640236a13c4090510d772e3818b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1971,6 +2003,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: DeskStuff01
       objectReference: {fileID: 0}
+    - target: {fileID: 485031526840763943, guid: 8f6c0f4f749d43541bccb283729d8583, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+
     - target: {fileID: 1004581125483781277, guid: 8f6c0f4f749d43541bccb283729d8583, type: 3}
       propertyPath: m_LocalPosition.x
       value: 7.6112256
@@ -2192,6 +2229,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Environment
       objectReference: {fileID: 0}
+    - target: {fileID: 8345070699079395523, guid: 09aade0ecefd01e4b8f7661acf64f5c2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+
     - target: {fileID: 8680289381081499115, guid: 09aade0ecefd01e4b8f7661acf64f5c2, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -2242,6 +2284,7 @@ SceneRoots:
   - {fileID: 2054484434}
   - {fileID: 2790947932306430971}
   - {fileID: 4915439660950622566}
+
   - {fileID: 260488158251524385}
   - {fileID: 5368741626748483196}
   - {fileID: 7521665945565601509}
