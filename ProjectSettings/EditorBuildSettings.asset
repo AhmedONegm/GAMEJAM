@@ -6,8 +6,11 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+    path: Assets/Scenes/UI_Osama.unity
+    guid: c2fcd29b5698ee14f8ee65fa4144d0eb
+  - enabled: 1
+    path: Assets/Scenes/player_anim.unity
+    guid: ac9ae21f8c710bd4e896a3803f010edc
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
