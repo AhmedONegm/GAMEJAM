@@ -14,13 +14,16 @@ public class PlayerController : MonoBehaviour
     [SerializeField] GameObject vase;
     [SerializeField] GameObject videoManager;
     public bool isStucking = false;
+    public bool isReading = false;
     //public bool isSleeping = false;
     float duration = 1.0f;
     float elapsed = 0f;
     bool isInBedTrigger = false;
     bool isInOfficeTrigger = false;
-   public bool isBusy = false;
-
+    public bool isOnDiskTrigger = false;
+    public bool isBusy = false;
+    [SerializeField] Transform book;
+    [SerializeField] Transform playerLookTarget;
     [SerializeField] Collider deskCollider;
     [SerializeField] Collider pcCollider;
     [SerializeField] CinemachineVirtualCamera pcAimCamera;
@@ -60,6 +63,22 @@ public class PlayerController : MonoBehaviour
                 StartCoroutine(TypingOnPC());
 
             }
+
+            if(isOnDiskTrigger)
+            {
+                if (isReading)
+            {
+                isReading = false;
+                    ReadingScript.instance.read(book, 8, CursorLockMode.None, "ReadyToRead", true);
+                }
+                else
+            {
+                // Start reading
+                isReading = true;
+                    ReadingScript.instance.read(playerLookTarget, 40, CursorLockMode.Locked, "ReadyToRead", false);
+                }
+            }
+
         }
 
     }

@@ -8,35 +8,49 @@ public class ReadingScript : MonoBehaviour
     [SerializeField] GameObject book;
     [SerializeField] private Transform playerLookTarget;
     [SerializeField] Animator animator;
-
+    public static ReadingScript instance;
     private void Start()
     {
         book.SetActive(false);
+        instance = this;
     }
+
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.CompareTag("Player"))
         {
-            virtualCamera.Follow=book.transform;
-            virtualCamera.LookAt = book.transform;
-            virtualCamera.m_Lens.FieldOfView = 5;
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-            animator.SetBool("ReadyToRead", true);
-            book.SetActive(true);
+            PlayerController.instance.isOnDiskTrigger = true;
         }
+    }
+    public void read(Transform lookAtTransform, int cameraFOV, CursorLockMode mode, string animatorBool, bool Bool)
+    {
+        virtualCamera.Follow = lookAtTransform.transform;
+        virtualCamera.LookAt = lookAtTransform.transform;
+        virtualCamera.m_Lens.FieldOfView = cameraFOV;
+        Cursor.lockState = mode;
+        Cursor.visible = Bool;
+        if (Bool)
+        {
+            animator.SetBool(animatorBool, false); // Reset first
+            animator.SetBool(animatorBool, true);  // Then enable
+        }
+        else
+        {
+            animator.SetBool(animatorBool, false);
+        }
+        book.SetActive(Bool);
+        PlayerController.instance.isStucking = Bool;
     }
     private void OnTriggerExit(Collider other)
     {
-        if(other.tag == "Player")
+        if (other.CompareTag("Player"))
         {
-            virtualCamera.Follow= playerLookTarget.transform;
-            virtualCamera.LookAt = null;
-            virtualCamera.m_Lens.FieldOfView = 40;
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
-            animator.SetBool("ReadyToRead", false);
-            book.SetActive(false);
+            PlayerController.instance.isOnDiskTrigger = false;
+            if (PlayerController.instance.isReading)
+            {
+                PlayerController.instance.isReading = false;
+                read(playerLookTarget, 40, CursorLockMode.Locked, "ReadyToRead", false);
+            }
         }
     }
 }
