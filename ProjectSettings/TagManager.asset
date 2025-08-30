@@ -20,6 +20,7 @@ TagManager:
   - Environment_Hills
   - Bed
   - Office
+  - Pullable
   layers:
   - Default
   - TransparentFX
