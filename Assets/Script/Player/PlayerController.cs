@@ -1,3 +1,4 @@
+using Cinemachine;
 using NUnit;
 using System.Collections;
 using Unity.VisualScripting;
@@ -13,12 +14,20 @@ public class PlayerController : MonoBehaviour
     [SerializeField] GameObject vase;
     [SerializeField] GameObject videoManager;
     public bool isStucking = false;
-    public bool isSleeping = false;
+    public bool isReading = false;
+    //public bool isSleeping = false;
     float duration = 1.0f;
     float elapsed = 0f;
     bool isInBedTrigger = false;
     bool isInOfficeTrigger = false;
-   public bool isBusy = false;
+    public bool isOnDiskTrigger = false;
+    public bool isBusy = false;
+    [SerializeField] Transform book;
+    [SerializeField] Transform playerLookTarget;
+    [SerializeField] Collider deskCollider;
+    [SerializeField] Collider pcCollider;
+    [SerializeField] CinemachineVirtualCamera pcAimCamera;
+    [SerializeField] CinemachineVirtualCamera bedAimCamera;
 
     Collider currentTrigger;
 
@@ -27,11 +36,14 @@ public class PlayerController : MonoBehaviour
 
     private void Awake()
     {
+        
         instance = this;
     }
 
     void Start()
     {
+        deskCollider.isTrigger = false;
+        pcCollider.isTrigger = false;
         animator = GetComponent<Animator>();
     }
 
@@ -45,25 +57,28 @@ public class PlayerController : MonoBehaviour
                 StartCoroutine(MoveToSleepPoint());
             }
 
-            if (isSleeping)
-            {
-                StartCoroutine(WakeUpRoutine());
-            }
 
             if (isInOfficeTrigger) 
             {
                 StartCoroutine(TypingOnPC());
-                //isBusy = true;
-                //sprite.SetActive(true);
-                //vase.SetActive(true);
-                //videoManager.SetActive(true);
-                //Debug.Log("typing");
-                //transform.position = chairPoint.position;
-                //transform.rotation = chairPoint.rotation;
-                //animator.SetBool("isStanding", true);
-                //isStucking = true;
 
             }
+
+            if(isOnDiskTrigger)
+            {
+                if (isReading)
+            {
+                isReading = false;
+                    ReadingScript.instance.read(book, 8, CursorLockMode.None, "ReadyToRead", true);
+                }
+                else
+            {
+                // Start reading
+                isReading = true;
+                    ReadingScript.instance.read(playerLookTarget, 40, CursorLockMode.Locked, "ReadyToRead", false);
+                }
+            }
+
         }
 
     }
@@ -87,75 +102,75 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Bed")
+        {
+            isInBedTrigger = false;
+            currentTrigger = null;
+        }
+        if (other.tag == "Office")
+        {
+            isInOfficeTrigger = false;
+            currentTrigger = null;
+        }
+    }
+
 
 
     IEnumerator MoveToSleepPoint()
     {
-     
-        Vector3 start = transform.position;
-        Vector3 end = sleepPoint.position;
-
-
-
-        while (elapsed < duration)
-        {
-            transform.position = Vector3.Lerp(start, end, elapsed / duration);
-            transform.rotation = Quaternion.Lerp(transform.rotation, sleepPoint.rotation, elapsed / duration);
-            elapsed += Time.deltaTime;
-            yield return null;
-        }
-        transform.position = end;
+        // Go to sleep
+        transform.SetParent(sleepPoint);
+        transform.position = sleepPoint.position;   // use world position
+        transform.rotation = sleepPoint.rotation;
 
         isStucking = true;
-        isSleeping = true;
+        //isSleeping = true;
         isBusy = true;
-        AnimStatus(isSleeping);
-    }
+        AnimStatus(isStucking);
+        bedAimCamera.Priority = 40;
+        yield return new WaitForSeconds(10f); // Sleep duration
 
-    IEnumerator WakeUpRoutine()
-    {
+        // Wake up
+        transform.SetParent(null); // detach before moving
+        transform.position = weakupPoint.position;
+        transform.rotation = weakupPoint.rotation;
+
         isStucking = false;
-        isSleeping = false;
-        AnimStatus(isSleeping); // Start wake-up animation
-        Debug.Log("weakup");
-        yield return new WaitForSeconds(0.5f); // Optional: let animation start first
-
-        Vector3 startPos = transform.position;
-        Vector3 endPos = weakupPoint.position;
-
-        while (elapsed < duration)
-        {
-            transform.position = Vector3.Lerp(startPos, endPos, elapsed / duration);
-            transform.rotation = Quaternion.Slerp(transform.rotation, weakupPoint.rotation, elapsed / duration);
-            elapsed += Time.deltaTime;
-            yield return null;
-        }
-
-        transform.position = endPos;
-        isBusy = true;
+        //isSleeping = false;
+        isBusy = false;
+        AnimStatus(isStucking);
+        bedAimCamera.Priority = 0;
     }
+
+
 
     IEnumerator TypingOnPC()
     {
-        isBusy = true;
-        sprite.SetActive(true);
-        vase.SetActive(true);
-        videoManager.SetActive(true);
-        Debug.Log("typing");
-        transform.position = chairPoint.position;
-        transform.rotation = chairPoint.rotation;
-        animator.SetBool("isStanding", true);
-        isStucking = true;
+        transform.SetParent(chairPoint);
+        transform.localPosition = Vector3.zero;
+        transform.localRotation = Quaternion.identity;
 
-        yield return new WaitForSeconds(65f); // Example duration
-        isStucking = false;
-        isBusy = false;
-        sprite.SetActive(false);
-        vase.SetActive(false);
-        videoManager.SetActive(false);
-        animator.SetBool("isStanding", false);
+        PlayOnPC(true);
+        yield return new WaitForSeconds(30f); // Example duration
+        PlayOnPC(false);
+        transform.SetParent(null);
     }
 
+
+    private void PlayOnPC(bool isPlaying)
+    {
+        deskCollider.isTrigger = isPlaying;
+        pcCollider.isTrigger = isPlaying;
+        isStucking = isPlaying;
+        isBusy = isPlaying;
+        sprite.SetActive(isPlaying);
+        vase.SetActive(isPlaying);
+        videoManager.SetActive(isPlaying);
+        animator.SetBool("isStanding", isPlaying);
+        pcAimCamera.Priority =isPlaying? 40:0;
+    }
 
     private void AnimStatus(bool isSleeping)
     {
