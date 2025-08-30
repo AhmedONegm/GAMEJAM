@@ -21,14 +21,16 @@ TagManager:
   - Bed
   - Office
   - Pullable
+  - Box_To_Read
+  - CMcamera
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - CMcamera
   - Water
   - UI
-  - 
+  - DeskRead
   - 
   - 
   - 
