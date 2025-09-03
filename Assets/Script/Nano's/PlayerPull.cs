@@ -1,15 +1,21 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
+using UnityEngine.Animations.Rigging;
+using UnityEngine.UIElements;
 
 public class PlayerPull : MonoBehaviour
 {
+    public Rig ikRig;
     public float rayDistance = 10f;
     public float pullSpeed = 5f;
-
-    private bool isPulling = false;
+    public bool isPulling = false;
+    
     private Transform pulledObject;
 
     private Vector3 velocity = Vector3.zero; // for SmoothDamp
     private Quaternion lockedRotation;       // fixed rotation while pulling
+    private float pullDistance;              // keep constant distance
+    
 
     private void Update()
     {
@@ -28,8 +34,8 @@ public class PlayerPull : MonoBehaviour
             // Keep the player locked facing the box
             transform.rotation = lockedRotation;
 
-            // Target in front of player (lock Y to box’s height)
-            Vector3 targetPos = transform.position + transform.forward * 1.5f;
+            // Keep the same distance as when pulling started
+            Vector3 targetPos = transform.position + transform.forward * pullDistance;
             targetPos.y = pulledObject.position.y;
 
             pulledObject.position = Vector3.SmoothDamp(
@@ -44,6 +50,7 @@ public class PlayerPull : MonoBehaviour
 
     private void StartPull()
     {
+        
         Vector3 pos = transform.position + new Vector3(0, 0.5f, 0);
 
         if (Physics.Raycast(pos, transform.forward, out RaycastHit hit, rayDistance))
@@ -60,12 +67,18 @@ public class PlayerPull : MonoBehaviour
                 {
                     lockedRotation = Quaternion.LookRotation(dir);
                 }
+
+                // Store the starting distance
+                pullDistance = Vector3.Distance(transform.position, pulledObject.position);
+                
+                ikRig.weight = 1f;
             }
         }
     }
 
     private void StopPull()
     {
+        ikRig.weight = 0f;
         isPulling = false;
         pulledObject = null;
     }

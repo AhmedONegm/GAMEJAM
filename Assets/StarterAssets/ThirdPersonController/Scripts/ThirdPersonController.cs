@@ -155,6 +155,16 @@ namespace StarterAssets
 
         private void Update()
         {
+            if (GetComponent<PlayerPull>().isPulling == true)
+            {
+                MoveSpeed = 1.5f;
+            }
+            else
+            {
+                MoveSpeed = 2f;
+            }
+            
+            
             _hasAnimator = TryGetComponent(out _animator);
 
             JumpAndGravity();
