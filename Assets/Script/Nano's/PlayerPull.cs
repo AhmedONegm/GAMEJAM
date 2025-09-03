@@ -82,4 +82,5 @@ public class PlayerPull : MonoBehaviour
         isPulling = false;
         pulledObject = null;
     }
+    
 }
