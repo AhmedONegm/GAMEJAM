@@ -23,6 +23,7 @@ TagManager:
   - Pullable
   - Box_To_Read
   - CMcamera
+  - Pickable
   layers:
   - Default
   - TransparentFX
