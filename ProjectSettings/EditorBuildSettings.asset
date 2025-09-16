@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/UI_Osama.unity
+    path: Assets/Scenes/OtherScenes/UI_Osama.unity
     guid: c2fcd29b5698ee14f8ee65fa4144d0eb
   - enabled: 1
     path: Assets/Scenes/Main_Scene.unity
