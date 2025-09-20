@@ -1,11 +1,18 @@
 fileFormatVersion: 2
 guid: cdf5e37f4c0554ec595f326164893341
+AssetOrigin:
+  serializedVersion: 1
+  productId: 193096
+  packageName: Rig Anatomy Male Muscles
+  packageVersion: 1.0
+  assetPath: Assets/Rigged Male Anatomy folder/Mesh model folder/Male Muscles - Kick.fbx
+  uploadId: 427917
 ModelImporter:
-  serializedVersion: 20101
+  serializedVersion: 22200
   internalIDToNameTable:
   - first:
       74: -203655887218126122
-    second: mixamo.com
+    second: Kick
   externalObjects: {}
   materials:
     materialImportMode: 1
@@ -17,16 +24,15 @@ ModelImporter:
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
     motionNodeName: 
-    rigImportErrors: 
-    rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
     importConstraints: 0
-    animationCompression: 1
+    animationCompression: 3
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
@@ -35,7 +41,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: mixamo.com
+      name: Kick
       takeName: mixamo.com
       internalID: 0
       firstFrame: 0
@@ -71,10 +77,12 @@ ModelImporter:
     addColliders: 0
     useSRGBMaterialColor: 1
     sortHierarchyByName: 1
+    importPhysicalCameras: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
     importLights: 1
+    nodeNameCollisionStrategy: 0
     fileIdsGeneration: 2
     swapUVChannels: 0
     generateSecondaryUV: 0
@@ -86,6 +94,7 @@ ModelImporter:
     skinWeightsMode: 0
     maxBonesPerVertex: 4
     minBoneWeight: 0.001
+    optimizeBones: 1
     meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
@@ -96,6 +105,7 @@ ModelImporter:
     secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
     useFileScale: 1
+    strictVertexDataChecks: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -109,7 +119,152 @@ ModelImporter:
   humanDescription:
     serializedVersion: 3
     human: []
-    skeleton: []
+    skeleton:
+    - name: Male Muscles - Kick(Clone)
+      parentName: 
+      position: {x: 0.0039460487, y: 0.8896033, z: -0.00010024956}
+      rotation: {x: 0.07112437, y: 0.30537945, z: 0.011731002, w: 0.94949836}
+      scale: {x: 1, y: 1, z: 1}
+    - name: spine_1
+      parentName: Male Muscles - Kick(Clone)
+      position: {x: 0.0030412534, y: 0.22057779, z: -0.02784228}
+      rotation: {x: 0.6345606, y: -0.22023617, z: 0.21286952, w: 0.7095882}
+      scale: {x: 1.0000002, y: 1.0000005, z: 1.0000005}
+    - name: spine_2
+      parentName: spine_1
+      position: {x: 0.001284023, y: 0.0025349236, z: -0.10491429}
+      rotation: {x: -0, y: -0.000000007902532, z: 0.000000034244316, w: 1}
+      scale: {x: 1, y: 0.99999994, z: 1}
+    - name: CHEST_center
+      parentName: spine_2
+      position: {x: 0.0017040091, y: 0.0059455168, z: -0.23404911}
+      rotation: {x: -0.00000008916528, y: 0.0070573254, z: 0.000000026059666, w: 0.9999751}
+      scale: {x: 0.9999999, y: 1.0000001, z: 1.0000001}
+    - name: L_shoulder
+      parentName: CHEST_center
+      position: {x: -0.021755561, y: -0.021141725, z: -0.047930803}
+      rotation: {x: -0.5253925, y: 0.5340003, z: -0.46445635, w: 0.47232062}
+      scale: {x: 1.0000007, y: 1.0000002, z: 1.0000007}
+    - name: L_arm
+      parentName: L_shoulder
+      position: {x: 0.00031416252, y: 0.022562796, z: -0.21605086}
+      rotation: {x: 0.027910814, y: 0.07173513, z: 0.0099826455, w: 0.9969832}
+      scale: {x: 0.99999994, y: 0.99999994, z: 1}
+    - name: L_forearm
+      parentName: L_arm
+      position: {x: 0.045948897, y: 0.011247695, z: -0.20929623}
+      rotation: {x: 0.04217711, y: -0.09261337, z: -0.0036129537, w: 0.9948019}
+      scale: {x: 0.99999994, y: 1.0000002, z: 1.0000001}
+    - name: L_hand
+      parentName: L_forearm
+      position: {x: -0.031156834, y: -0.000966864, z: -0.2710006}
+      rotation: {x: 0.0016340502, y: -0.000000093234114, z: -0.00000008545953, w: 0.9999987}
+      scale: {x: 1.0000004, y: 1.0000001, z: 1.0000005}
+    - name: tip
+      parentName: L_hand
+      position: {x: -0.009859867, y: 0.0007387529, z: -0.15592481}
+      rotation: {x: -0, y: -0, z: 1.7486013e-15, w: 1}
+      scale: {x: 1.0000004, y: 1.0000002, z: 1.0000004}
+    - name: R_shoulder
+      parentName: CHEST_center
+      position: {x: 0.024095539, y: -0.021567741, z: -0.048112918}
+      rotation: {x: -0.48346272, y: 0.4927062, z: -0.5080517, w: 0.5151582}
+      scale: {x: 1.0000004, y: 0.99999994, z: 1.0000001}
+    - name: R_arm
+      parentName: R_shoulder
+      position: {x: -4.083311e-15, y: -5.4143357e-16, z: 0.21756235}
+      rotation: {x: -0.020587295, y: -0.07627315, z: 0.0024052113, w: 0.9968715}
+      scale: {x: 0.9999998, y: 0.99999994, z: 1.0000005}
+    - name: R_forearm
+      parentName: R_arm
+      position: {x: 0.045334604, y: -0.005996473, z: 0.19787936}
+      rotation: {x: 0.03402157, y: 0.09932653, z: -0.0020209597, w: 0.9944711}
+      scale: {x: 1.0000001, y: 1, z: 0.9999998}
+    - name: R_hand
+      parentName: R_forearm
+      position: {x: -0.031156834, y: 0.013681226, z: 0.25788164}
+      rotation: {x: 0.0016340797, y: 0.00000017806029, z: -0.000000022418561, w: 0.99999875}
+      scale: {x: 0.99999994, y: 1.0000002, z: 1}
+    - name: tip_2
+      parentName: R_hand
+      position: {x: -0.009859866, y: 0.005643939, z: 0.15894426}
+      rotation: {x: -0, y: -1.4210851e-14, z: 7.494004e-16, w: 1}
+      scale: {x: 1.0000001, y: 0.99999994, z: 1.0000001}
+    - name: neck
+      parentName: CHEST_center
+      position: {x: 0.0058367946, y: -0.0035855914, z: -0.1403454}
+      rotation: {x: -0.039263036, y: 0.000035597477, z: -0.0006034279, w: 0.9992287}
+      scale: {x: 0.99999976, y: 1.0000002, z: 1.0000001}
+    - name: head
+      parentName: neck
+      position: {x: 0.0008097069, y: 0.030218907, z: -0.05090531}
+      rotation: {x: 0.0028568795, y: -0.0007846204, z: -0.0069659865, w: 0.9999714}
+      scale: {x: 1.0000002, y: 1.0000002, z: 1.0000001}
+    - name: face
+      parentName: head
+      position: {x: 0.0031239495, y: -0.020644978, z: -0.08742912}
+      rotation: {x: -0.0000042754687, y: 0.0011341402, z: -0.7048564, w: 0.70934916}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1.0000001}
+    - name: Joint_6
+      parentName: face
+      position: {x: -0.13782313, y: -0.00038952744, z: 0.014931816}
+      rotation: {x: -0, y: -0, z: 0.0000000048489808, w: 1}
+      scale: {x: 1.0000004, y: 1.0000002, z: 1.0000002}
+    - name: tip_3
+      parentName: head
+      position: {x: 0.0019776137, y: 0.031272408, z: -0.19167273}
+      rotation: {x: -0.000004245434, y: 0.0011341409, z: -0.70485646, w: 0.70934916}
+      scale: {x: 0.9999998, y: 0.99999964, z: 1}
+    - name: L_leg
+      parentName: spine_1
+      position: {x: -0.08581404, y: 0.00475805, z: 0.08262461}
+      rotation: {x: 0.01779151, y: -0.0000000072654665, z: 0.000000013657353, w: 0.9998418}
+      scale: {x: 0.9999999, y: 0.99999994, z: 1}
+    - name: L_leg_tibia
+      parentName: L_leg
+      position: {x: -0.051878475, y: 0.03695917, z: 0.50889444}
+      rotation: {x: -0.022307511, y: 0.0000000067896044, z: -0.00000003481691, w: 0.9997512}
+      scale: {x: 1, y: 1.0000004, z: 1.0000002}
+    - name: L_leg_foot
+      parentName: L_leg_tibia
+      position: {x: -0.010008416, y: -0.047019217, z: 0.4352222}
+      rotation: {x: -0.034322944, y: -0.000000036393153, z: 0.000000048902802, w: 0.9994108}
+      scale: {x: 1.0000004, y: 0.99999994, z: 1}
+    - name: L_leg__foot
+      parentName: L_leg_foot
+      position: {x: -0.0061846776, y: 0.027592486, z: 0.053587776}
+      rotation: {x: 0.0000000037252894, y: 3.5527128e-15, z: -4.440891e-16, w: 1}
+      scale: {x: 1, y: 1.0000001, z: 1.0000002}
+    - name: L_leg_tip
+      parentName: L_leg__foot
+      position: {x: -0.017354347, y: 0.16775537, z: 0.03050017}
+      rotation: {x: -0.12697327, y: -0.6956133, z: 0.12697324, w: 0.6956133}
+      scale: {x: 1.0000001, y: 1, z: 0.9999998}
+    - name: R_leg
+      parentName: spine_1
+      position: {x: 0.091976255, y: 0.00475805, z: 0.08832787}
+      rotation: {x: 0.01779151, y: -0.00000001911927, z: -0.00000001926987, w: 0.9998418}
+      scale: {x: 1, y: 1.0000001, z: 1.0000001}
+    - name: R_leg_tibia
+      parentName: R_leg
+      position: {x: 0.05440884, y: 0.03689117, z: 0.5085318}
+      rotation: {x: -0.022307573, y: 0.000000049321763, z: 0.000000027912812, w: 0.9997512}
+      scale: {x: 1.0000001, y: 1.0000006, z: 1.0000006}
+    - name: R_leg_foot
+      parentName: R_leg_tibia
+      position: {x: 0.0045627565, y: -0.047083154, z: 0.4352266}
+      rotation: {x: -0.03432288, y: -0.00000006548686, z: 0.000000017456124, w: 0.9994108}
+      scale: {x: 0.9999998, y: 0.9999997, z: 0.9999996}
+    - name: R_leg_foot_2
+      parentName: R_leg_foot
+      position: {x: 2.2559732e-17, y: 0.027592486, z: 0.053587776}
+      rotation: {x: 0.0000000037252894, y: -0, z: 8.881782e-16, w: 1}
+      scale: {x: 1.0000001, y: 1.0000002, z: 1.0000004}
+    - name: R_tip
+      parentName: R_leg_foot_2
+      position: {x: 0.029336339, y: 0.16775537, z: 0.03050017}
+      rotation: {x: -0.12697323, y: -0.6956133, z: 0.12697326, w: 0.69561327}
+      scale: {x: 1, y: 1.0000002, z: 0.9999998}
     armTwist: 0.5
     foreArmTwist: 0.5
     upperLegTwist: 0.5
@@ -124,17 +279,13 @@ ModelImporter:
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   autoGenerateAvatarMappingIfUnspecified: 1
-  animationType: 1
+  animationType: 3
   humanoidOversampling: 1
-  avatarSetup: 0
+  avatarSetup: 1
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
+  importBlendShapeDeformPercent: 0
+  remapMaterialsIfMaterialImportModeIsNone: 1
   additionalBone: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 193096
-  packageName: Rig Anatomy Male Muscles
-  packageVersion: 1.0
-  assetPath: Assets/Rigged Male Anatomy folder/Mesh model folder/Male Muscles - Kick.fbx
-  uploadId: 427917
