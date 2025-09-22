@@ -24,6 +24,7 @@ TagManager:
   - Box_To_Read
   - CMcamera
   - Pickable
+  - CoffeeMachine
   layers:
   - Default
   - TransparentFX
