@@ -25,6 +25,7 @@ TagManager:
   - CMcamera
   - Pickable
   - Piano
+  - CoffeeMachine
   layers:
   - Default
   - TransparentFX
