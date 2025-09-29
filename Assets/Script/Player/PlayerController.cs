@@ -10,24 +10,29 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Transform sleepPoint;
     [SerializeField] Transform weakupPoint;
     [SerializeField] Transform chairPoint;
+    [SerializeField] Transform pianoPoint;
     [SerializeField] GameObject sprite;
     [SerializeField] GameObject vase;
     [SerializeField] GameObject videoManager;
     public bool isStucking = false;
     public bool isReading = false;
     //public bool isSleeping = false;
+    [SerializeField] float pianoTime = 30f;
     float duration = 1.0f;
     float elapsed = 0f;
     bool isInBedTrigger = false;
     bool isInOfficeTrigger = false;
+    bool isInPianoTrigger = false;
     public bool isOnDiskTrigger = false;
     public bool isBusy = false;
     [SerializeField] Transform book;
     [SerializeField] Transform playerLookTarget;
     [SerializeField] Collider deskCollider;
     [SerializeField] Collider pcCollider;
+    [SerializeField] Collider pianoCollider;
     [SerializeField] CinemachineVirtualCamera pcAimCamera;
     [SerializeField] CinemachineVirtualCamera bedAimCamera;
+    [SerializeField] CinemachineVirtualCamera PianoAimCamera;
 
     Collider currentTrigger;
 
@@ -63,8 +68,13 @@ public class PlayerController : MonoBehaviour
                 StartCoroutine(TypingOnPC());
 
             }
+            if (isInPianoTrigger)
+            {
+                StartCoroutine(PlayOnPiano());
 
-            if(isOnDiskTrigger)
+            }
+
+            if (isOnDiskTrigger)
             {
                 if (isReading)
             {
@@ -94,11 +104,17 @@ public class PlayerController : MonoBehaviour
             currentTrigger = other;
             
         }
-        if (other.tag == "Office" )
+        else if (other.tag == "Office" )
         {
             isInOfficeTrigger = true;
             currentTrigger = other;
          
+        }
+        else if (other.tag == "Piano")
+        {
+            isInPianoTrigger = true;
+            currentTrigger = other;
+
         }
     }
 
@@ -113,6 +129,12 @@ public class PlayerController : MonoBehaviour
         {
             isInOfficeTrigger = false;
             currentTrigger = null;
+        }
+        if (other.tag == "Piano")
+        {
+            isInPianoTrigger = false;
+            currentTrigger = null;
+
         }
     }
 
@@ -168,10 +190,32 @@ public class PlayerController : MonoBehaviour
         sprite.SetActive(isPlaying);
         vase.SetActive(isPlaying);
         videoManager.SetActive(isPlaying);
-        animator.SetBool("isStanding", isPlaying);
+        animator.SetBool("isPlayingPiano", isPlaying);
         pcAimCamera.Priority =isPlaying? 40:0;
     }
 
+
+    IEnumerator PlayOnPiano()
+    {
+        transform.SetParent(pianoPoint);
+        transform.localPosition = Vector3.zero;
+        transform.localRotation = Quaternion.identity;
+        PlayPiano(true);
+        yield return new WaitForSeconds(pianoTime);
+        PlayPiano(false);
+        transform.SetParent(null);
+
+    }
+    private void PlayPiano(bool isPlaying)
+    {
+        pianoCollider.isTrigger = isPlaying;
+        if (isPlaying) PianoGameManager.instance.StartGame(pianoTime);
+        isStucking = isPlaying;
+        isBusy = isPlaying;
+        animator.SetBool("isStanding", isPlaying);
+        PianoAimCamera.Priority = isPlaying ? 40 : 0;
+         
+    }
     private void AnimStatus(bool isSleeping)
     {
         if (animator != null)
