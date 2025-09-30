@@ -1,6 +1,9 @@
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
+using static Unity.Burst.Intrinsics.X86.Avx;
+using System;
+using System.Collections;
 
 public class Workout : MonoBehaviour
 {
@@ -11,7 +14,9 @@ public class Workout : MonoBehaviour
     
     private void OnTriggerEnter(Collider other)
     {
-        UIScreen.SetActive(true);
+        if (GameDayManager.instance.IsTaskAllowed(GameTask.Fitness))
+
+            UIScreen.SetActive(true);
     }
     private void OnTriggerExit(Collider other)
     {
@@ -25,32 +30,57 @@ public class Workout : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (UIScreen.active)
+        if (GameDayManager.instance.IsTaskAllowed(GameTask.Fitness))
         {
-            if (Input.GetKey(KeyCode.G))
+            if (UIScreen.active)
             {
-                playerAnimator.SetTrigger("Crunch");
-            }
-            else if (Input.GetKey(KeyCode.H))
-            {
-                playerAnimator.SetTrigger("Burpee");
-            }
-            else if (Input.GetKey(KeyCode.J))
-            {
-                playerAnimator.SetTrigger("Squat");
-            }
-            else if (Input.GetKey(KeyCode.K))
-            {
-                playerAnimator.SetTrigger("Kick");
-            }
-            else if (Input.GetKey(KeyCode.L))
-            {
-                playerAnimator.SetTrigger("PushUp");
-            }
-            else if (Input.GetKey(KeyCode.F))
-            {
-                playerAnimator.SetTrigger("Rotation");
+                if (Input.GetKey(KeyCode.G))
+                {
+                    playerAnimator.SetTrigger("Crunch");
+                    StartCoroutine(TimerFitness());
+
+                }
+                else if (Input.GetKey(KeyCode.H))
+                {
+                    playerAnimator.SetTrigger("Burpee");
+                    StartCoroutine(TimerFitness());
+
+                }
+                else if (Input.GetKey(KeyCode.J))
+                {
+                    playerAnimator.SetTrigger("Squat");
+                    StartCoroutine(TimerFitness());
+
+                }
+                else if (Input.GetKey(KeyCode.K))
+                {
+                    playerAnimator.SetTrigger("Kick");
+                    StartCoroutine(TimerFitness());
+
+                }
+                else if (Input.GetKey(KeyCode.L))
+                {
+                    playerAnimator.SetTrigger("PushUp");
+                    StartCoroutine(TimerFitness());
+
+                }
+                else if (Input.GetKey(KeyCode.F))
+                {
+                    playerAnimator.SetTrigger("Rotation");
+                    StartCoroutine(TimerFitness());
+
+                }
             }
         }
     }
+
+
+
+private IEnumerator TimerFitness()
+{
+    PlayerController.instance.isStucking = true;
+    yield return new WaitForSeconds(5f);
+    PlayerController.instance.isStucking = false;
+
+}
 }

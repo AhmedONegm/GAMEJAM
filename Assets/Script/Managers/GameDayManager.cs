@@ -8,6 +8,8 @@ public enum GameTask
     ReadBook,
     PlayPiano,
     DrinkCoffee,
+    FollowRobot,
+    Fitness
     // Add more tasks as needed
 }
 
@@ -23,8 +25,8 @@ public class GameDayManager : MonoBehaviour
     {
         { 1, new HashSet<GameTask> { GameTask.PlayPC, GameTask.ReadBook } },
         { 2, new HashSet<GameTask> { GameTask.PlayPiano, GameTask.DrinkCoffee } },
-        { 3, new HashSet<GameTask> { /* Add tasks for day 3 */ } },
-        { 4, new HashSet<GameTask> { /* Add tasks for day 4 */ } },
+        { 3, new HashSet<GameTask> { GameTask.FollowRobot ,GameTask.Fitness} },
+        { 4, new HashSet<GameTask> { GameTask.FollowRobot } },
         { 5, new HashSet<GameTask> { /* Add tasks for day 5 */ } },
     };
 
