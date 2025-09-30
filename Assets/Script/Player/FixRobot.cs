@@ -21,7 +21,7 @@ public class FixRobot : MonoBehaviour
 
     private void Update()
     {
-        if (GameDayManager.instance.IsTaskAllowed(GameTask.Fitness))
+        if (GameDayManager.instance.IsTaskAllowed(GameTask.FixRobot))
         {
             if (Vector3.Distance(robot.transform.position, gameObject.transform.position) < 1f
                 && roboScript.needsFixing == true && Input.GetKeyDown(KeyCode.E))

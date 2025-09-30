@@ -27,8 +27,8 @@ public class GameDayManager : MonoBehaviour
         { 1, new HashSet<GameTask> { GameTask.PlayPC, GameTask.ReadBook } },
         { 2, new HashSet<GameTask> { GameTask.PlayPiano, GameTask.DrinkCoffee } },
         { 3, new HashSet<GameTask> { GameTask.FollowRobot ,GameTask.Fitness} },
-        { 4, new HashSet<GameTask> { GameTask.FollowRobot } },
-        { 5, new HashSet<GameTask> { GameTask.FixRobot } },
+        { 4, new HashSet<GameTask> { GameTask.FollowRobot, GameTask.FixRobot } },
+        { 5, new HashSet<GameTask> { GameTask.FollowRobot, } },
     };
 
     private void Awake()
