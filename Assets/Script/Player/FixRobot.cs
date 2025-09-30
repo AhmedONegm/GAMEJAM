@@ -44,6 +44,7 @@ public class FixRobot : MonoBehaviour
         yield return new WaitForSeconds(15f);
         PlayerController.instance.isStucking = false;
         roboScript.needsFixing = false;
+        roboScript.Fix();
     }
 
     
