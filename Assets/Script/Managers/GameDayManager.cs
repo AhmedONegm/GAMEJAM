@@ -18,7 +18,7 @@ public class GameDayManager : MonoBehaviour
 {
     public static GameDayManager instance;
 
-    [SerializeField] int currentDay = 1;
+    public  int currentDay = 1;
     public int CurrentDay => currentDay;
 
     // Map each day to its allowed tasks
@@ -53,5 +53,10 @@ public class GameDayManager : MonoBehaviour
     public void SetDay(int day)
     {
         currentDay = Mathf.Clamp(day, 1, dayTasks.Count);
+    }
+    public void IncreaseDay()
+    {
+        currentDay++;
+        
     }
 }
