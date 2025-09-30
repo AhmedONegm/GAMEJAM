@@ -1,8 +1,8 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
-using UnityEngine.Rendering;
-using UnityEngine.UI;
+using TMPro;
 
 public class Robot : MonoBehaviour
 {
@@ -20,6 +20,7 @@ public class Robot : MonoBehaviour
     [SerializeField] private GameObject happyFacePanel;
     [SerializeField] private GameObject angryFacePanel;
     [SerializeField] private GameObject textPanel;
+    [SerializeField] private TextMeshProUGUI text;
     private void Start()
     {
         if (agent == null)
@@ -65,6 +66,28 @@ public class Robot : MonoBehaviour
         angryFacePanel.SetActive(false);
         textPanel.SetActive(false);
             
+        happyFacePanel.SetActive(true); 
+    }
+
+    public void ShowText(string s)
+    {
+        text.text = s;
+        
+        angryFacePanel.SetActive(false);
+        happyFacePanel.SetActive(false);
+        
+        textPanel.SetActive(false);
+
+        StartCoroutine(Wait());
+    }
+
+    private IEnumerator Wait()
+    {
+        yield return new WaitForSeconds(5f);
+        
+        angryFacePanel.SetActive(false);
+        textPanel.SetActive(false);
+        
         happyFacePanel.SetActive(true); 
     }
 }
