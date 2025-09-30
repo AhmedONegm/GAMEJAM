@@ -31,7 +31,12 @@ public class Robot : MonoBehaviour
 
     private void Update()
     {
-        if (GameDayManager.instance.IsTaskAllowed(GameTask.FollowRobot))
+        //if (GameDayManager.instance.IsTaskAllowed(GameTask.FollowRobot)) {
+        //    FollowPlayer();
+        //}
+
+        if (needsFixing == false)
+        {
             FollowPlayer();
         }
 
