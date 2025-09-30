@@ -175,7 +175,7 @@ public class PlayerController : MonoBehaviour
         transform.localRotation = Quaternion.identity;
 
         PlayOnPC(true);
-        yield return new WaitForSeconds(30f); // Example duration
+        yield return new WaitForSeconds(20f); // Example duration
         PlayOnPC(false);
         transform.SetParent(null);
     }
@@ -190,7 +190,7 @@ public class PlayerController : MonoBehaviour
         sprite.SetActive(isPlaying);
         vase.SetActive(isPlaying);
         videoManager.SetActive(isPlaying);
-        animator.SetBool("isPlayingPiano", isPlaying);
+        animator.SetBool("isStanding", isPlaying);
         pcAimCamera.Priority =isPlaying? 40:0;
     }
 
@@ -212,7 +212,7 @@ public class PlayerController : MonoBehaviour
         if (isPlaying) PianoGameManager.instance.StartGame(pianoTime);
         isStucking = isPlaying;
         isBusy = isPlaying;
-        animator.SetBool("isStanding", isPlaying);
+        animator.SetBool("isPlayingPiano", isPlaying);
         PianoAimCamera.Priority = isPlaying ? 40 : 0;
          
     }

@@ -3719,6 +3719,18 @@ PrefabInstance:
       propertyPath: m_TagString
       value: CoffeeMachine
       objectReference: {fileID: 0}
+    - target: {fileID: 4503317434347691399, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
+      propertyPath: cup
+      value: 
+      objectReference: {fileID: 1255427978}
+    - target: {fileID: 4503317434347691399, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
+      propertyPath: leftHand
+      value: 
+      objectReference: {fileID: 225489220}
+    - target: {fileID: 4503317434347691399, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
+      propertyPath: cupPosition
+      value: 
+      objectReference: {fileID: 360627807}
     - target: {fileID: 5597113867290821413, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -3752,23 +3764,20 @@ PrefabInstance:
       addedObject: {fileID: 8002264680806281515}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 4416926081852918481, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
-      insertIndex: -1
+      insertIndex: 7
       addedObject: {fileID: 2066566097}
     - targetCorrespondingSourceObject: {fileID: 4416926081852918481, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
-      insertIndex: -1
+      insertIndex: 8
       addedObject: {fileID: 2066566104}
     - targetCorrespondingSourceObject: {fileID: 4416926081852918481, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
-      insertIndex: -1
+      insertIndex: 9
       addedObject: {fileID: 2066566107}
     - targetCorrespondingSourceObject: {fileID: 4416926081852918481, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
-      insertIndex: -1
+      insertIndex: 10
       addedObject: {fileID: 2066566106}
     - targetCorrespondingSourceObject: {fileID: 4416926081852918481, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
-      insertIndex: -1
+      insertIndex: 11
       addedObject: {fileID: 2066566105}
-    - targetCorrespondingSourceObject: {fileID: 4416926081852918481, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2066566114}
   m_SourcePrefab: {fileID: 100100000, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
 --- !u!1 &1764214107
 GameObject:
@@ -5955,19 +5964,23 @@ MonoBehaviour:
   sleepPoint: {fileID: 989133625}
   weakupPoint: {fileID: 1256251621}
   chairPoint: {fileID: 1340139483}
+  pianoPoint: {fileID: 0}
   sprite: {fileID: 573730945}
   vase: {fileID: 315844809}
   videoManager: {fileID: 1581134879}
   isStucking: 0
   isReading: 0
+  pianoTime: 30
   isOnDiskTrigger: 0
   isBusy: 0
   book: {fileID: 1039351261893776588}
   playerLookTarget: {fileID: 700051398}
   deskCollider: {fileID: 1620052656}
   pcCollider: {fileID: 1482776892}
+  pianoCollider: {fileID: 0}
   pcAimCamera: {fileID: 1094516390}
   bedAimCamera: {fileID: 501849228}
+  PianoAimCamera: {fileID: 0}
 --- !u!114 &2066566104
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6097,22 +6110,6 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 6982812146204527121, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
   m_PrefabInstance: {fileID: 1762682258}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2066566114
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1604224336}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a7b70b63bd59f042bb8b28bdbdf5539, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  anim: {fileID: 2066566113}
-  cup: {fileID: 1255427978}
-  cupPosition: {fileID: 360627807}
-  leftHand: {fileID: 225489220}
 --- !u!4 &2084437433 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -6857788192064577062, guid: 6d125eb5c3d1a824b9a5e734f96bbc7a, type: 3}
