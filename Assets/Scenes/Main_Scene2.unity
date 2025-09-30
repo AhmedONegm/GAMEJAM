@@ -4284,6 +4284,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 829b7a69bfd17b942b7389d53de1fd03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  needsFixing: 1
   player: {fileID: 1604224336}
   agent: {fileID: 1210674596}
   rotationSpeed: 720
@@ -5929,7 +5930,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a6d82977b5e9f734e8507537d96b06a2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 10.653
+      value: 9.539
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a6d82977b5e9f734e8507537d96b06a2, type: 3}
       propertyPath: m_LocalPosition.y
@@ -6398,6 +6399,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4416926081852918481, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2066566105}
+    - targetCorrespondingSourceObject: {fileID: 4416926081852918481, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2066566120}
   m_SourcePrefab: {fileID: 100100000, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
 --- !u!1 &1764214107
 GameObject:
@@ -9097,6 +9101,20 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 6982812146204527121, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
   m_PrefabInstance: {fileID: 1762682258}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2066566120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1604224336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dec556a94a21abc41a11b0ed1fa2f492, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 2066566113}
+  robot: {fileID: 1210674592}
 --- !u!4 &2084437433 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -6857788192064577062, guid: 6d125eb5c3d1a824b9a5e734f96bbc7a, type: 3}

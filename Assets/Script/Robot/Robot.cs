@@ -4,6 +4,8 @@ using UnityEngine.AI;
 
 public class Robot : MonoBehaviour
 {
+    public bool needsFixing = false;
+    
     [SerializeField] private GameObject player;
     [SerializeField] private NavMeshAgent agent;
     
@@ -12,12 +14,18 @@ public class Robot : MonoBehaviour
 
     private void Start()
     {
-        agent = GetComponent<NavMeshAgent>();
+        if (agent == null)
+        {
+            agent = GetComponent<NavMeshAgent>();
+        }
     }
 
     private void Update()
     {
-        FollowPlayer();
+        if (needsFixing == false)
+        {
+            FollowPlayer();
+        }
     }
 
     private void FollowPlayer()
