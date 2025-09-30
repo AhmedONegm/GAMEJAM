@@ -21,22 +21,25 @@ public class FixRobot : MonoBehaviour
 
     private void Update()
     {
-        if (Vector3.Distance(robot.transform.position, gameObject.transform.position) < 1f
-            && roboScript.needsFixing == true && Input.GetKeyDown(KeyCode.E))
+        if (GameDayManager.instance.IsTaskAllowed(GameTask.FixRobot))
         {
-            Vector3 direction = robot.transform.position - transform.position;
-            direction.y = 0f;
-
-            if (direction.sqrMagnitude > 0.001f)
+            if (Vector3.Distance(robot.transform.position, gameObject.transform.position) < 1f
+                && roboScript.needsFixing == true && Input.GetKeyDown(KeyCode.E))
             {
-                Quaternion lookRotation = Quaternion.LookRotation(direction);
-                transform.rotation = lookRotation;
-            }
-            anim.SetTrigger("Fix");
-            PlayerController.instance.isStucking = true;
+                Vector3 direction = robot.transform.position - transform.position;
+                direction.y = 0f;
 
-            StartCoroutine(WaitForAnimationToFinish());
-        } 
+                if (direction.sqrMagnitude > 0.001f)
+                {
+                    Quaternion lookRotation = Quaternion.LookRotation(direction);
+                    transform.rotation = lookRotation;
+                }
+                anim.SetTrigger("Fix");
+                PlayerController.instance.isStucking = true;
+
+                StartCoroutine(WaitForAnimationToFinish());
+            }
+        }
     }
 
     private IEnumerator WaitForAnimationToFinish()

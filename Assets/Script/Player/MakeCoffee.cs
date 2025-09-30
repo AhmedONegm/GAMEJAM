@@ -21,13 +21,16 @@ public class MakeCoffee : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (Input.GetKeyDown(KeyCode.P))
+        if (GameDayManager.instance.IsTaskAllowed(GameTask.DrinkCoffee))
         {
-            if (other.gameObject.CompareTag("CoffeeMachine"))
+            if (Input.GetKeyDown(KeyCode.E))
             {
-                anim.SetTrigger("MakeCoffee");
-                PlayerController.instance.isStucking = true;
-                StartCoroutine(Extras());
+                if (other.gameObject.CompareTag("CoffeeMachine"))
+                {
+                    anim.SetTrigger("MakeCoffee");
+                    PlayerController.instance.isStucking = true;
+                    StartCoroutine(Extras());
+                }
             }
         }
     }

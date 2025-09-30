@@ -65,27 +65,32 @@ public class PlayerController : MonoBehaviour
 
             if (isInOfficeTrigger) 
             {
-                StartCoroutine(TypingOnPC());
+                if (GameDayManager.instance.IsTaskAllowed(GameTask.PlayPC))
+                    StartCoroutine(TypingOnPC());
 
             }
             if (isInPianoTrigger)
             {
-                StartCoroutine(PlayOnPiano());
+                if (GameDayManager.instance.IsTaskAllowed(GameTask.PlayPiano))
+                    StartCoroutine(PlayOnPiano());
 
             }
 
             if (isOnDiskTrigger)
             {
-                if (isReading)
-            {
-                isReading = false;
-                    ReadingScript.instance.read(book, 8, CursorLockMode.None, "ReadyToRead", true);
-                }
-                else
-            {
-                // Start reading
-                isReading = true;
-                    ReadingScript.instance.read(playerLookTarget, 40, CursorLockMode.Locked, "ReadyToRead", false);
+                if (GameDayManager.instance.IsTaskAllowed(GameTask.ReadBook))
+                {
+                    if (isReading)
+                    {
+                        isReading = false;
+                        ReadingScript.instance.read(book, 8, CursorLockMode.None, "ReadyToRead", true);
+                    }
+                    else
+                    {
+                        // Start reading
+                        isReading = true;
+                        ReadingScript.instance.read(playerLookTarget, 40, CursorLockMode.Locked, "ReadyToRead", false);
+                    }
                 }
             }
 
