@@ -347,6 +347,142 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1234493485}
   m_SourcePrefab: {fileID: 100100000, guid: 10b74f5e6e2f61942bf720cf22e15978, type: 3}
+--- !u!1 &225129612
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 225129615}
+  - component: {fileID: 225129614}
+  - component: {fileID: 225129613}
+  m_Layer: 5
+  m_Name: DayText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &225129613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 225129612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: Day 1
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 36
+  m_fontSizeBase: 36
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &225129614
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 225129612}
+  m_CullTransparentMesh: 1
+--- !u!224 &225129615
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 225129612}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1170155689}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 200, y: 50}
+  m_Pivot: {x: 0, y: 1}
 --- !u!4 &225452474 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2559285840627121667, guid: 6d125eb5c3d1a824b9a5e734f96bbc7a, type: 3}
@@ -4536,8 +4672,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25d523d301df35344aa5acc5f0fdca98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingTime: 20
+  startingTime: 100
   countdownText: {fileID: 1384106376}
+  day: {fileID: 225129613}
 --- !u!114 &1170155686
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4614,6 +4751,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1384106379}
+  - {fileID: 225129615}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -12242,6 +12380,79 @@ PrefabInstance:
     - target: {fileID: 238072374340222289, guid: 0a94cdcdf0d054045a98db2fccd19b33, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3320813050286656268, guid: 0a94cdcdf0d054045a98db2fccd19b33, type: 3}
+      propertyPath: content
+      value: '<size=150%><b>The Legend of the Silver Screen</b></size>
+
+
+
+        In
+        the peaceful village of Techwood, there lived a curious young apprentice
+        named Elara. Unlike other villagers who practiced swordplay or magic, Elara
+        possessed a different kind of gift - the ability to uncover hidden knowledge
+        and forgotten stories. Her mentor, the wise Archivist Orion, had taught her
+        that some of the greatest adventures could be found not in distant lands,
+        but in recorded memories of those who came before.
+
+
+
+        <size=130%><b>The
+        Discovery of Ancient Knowledge</b></size>
+
+
+
+        One rainy afternoon,
+        while organizing the Great Library''s archives, Elara discovered something
+        remarkable. Tucked away in a corner stood a sleek rectangular device that
+        glowed with soft blue light - what the ancients called a "computer." Archivist
+        Orion explained that this magical device contained moving picture stories
+        called "videos" that could transport viewers to different times and places,
+        teaching valuable lessons without ever leaving the library.
+
+
+
+        <size=130%><b>The
+        Portal to Other Worlds</b></size>
+
+
+
+        As Elara approached the device,
+        she noticed a gentle pulsating light coming from its screen, almost as if
+        it were inviting her to explore. Archivist Orion showed her how to operate
+        the mystical interface, revealing that each "video" contained wisdom from
+        master teachers, demonstrations of complex techniques, and stories that could
+        inspire new ways of thinking. With just a simple click, entire universes
+        of knowledge unfolded before her eyes.
+
+
+
+        <size=130%><b>The Modern
+        Adventurer''s Tool</b></size>
+
+
+
+        Elara soon discovered that this
+        technological marvel was just as powerful as any magical artifact. The videos
+        she watched taught her about distant cultures, scientific wonders, and creative
+        solutions to problems that had puzzled her village for generations. She learned
+        that true wisdom came not just from personal experience, but from building
+        upon the knowledge others had generously recorded and shared.
+
+
+
+        <size=130%><b>The
+        Legacy of Shared Learning</b></size>
+
+
+
+        Today, the computer in the
+        Great Library remains active, waiting for curious souls like yourself to
+        continue the tradition. The glowing screen beckons adventurers to take a
+        seat, use the magical pointer called a "mouse," and discover the wealth of
+        knowledge preserved in digital form. For sometimes, the most important quests
+        begin not with a sword, but with the simple decision to watch, listen, and
+        learn from those who have walked the path before us.'
       objectReference: {fileID: 0}
     - target: {fileID: 4165412878072235868, guid: 0a94cdcdf0d054045a98db2fccd19b33, type: 3}
       propertyPath: m_Name
